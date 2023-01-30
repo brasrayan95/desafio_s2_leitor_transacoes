@@ -1,0 +1,57 @@
+<style>
+    main {
+        margin: 0 auto;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+    }
+
+    table {
+        border-spacing: 0px;
+        border: 1px solid red;
+    }
+
+    th {
+        background-color: rgb(184, 184, 184);
+        color: white;
+        font-size: 18px;
+        border: none;
+    }
+
+    th, tr {
+        width: 150px;
+        text-align: center;
+    }
+
+
+</style>
+
+<div>
+    {% for loja in shops %}
+        <h2>{{ loja }}</h2>
+        <table>
+            <tr>
+                <th>Data</th>
+                <th>Hora</th>
+                <th>Valor</th>
+                <th>Tipo</th>
+                <th>CPF</th>
+                <th>Cartão</th>
+            </tr>
+            {% for transacao in data %}
+                {%if transacao.nomedaloja == loja%}
+                    <tr>
+                        <td>{{transacao.data}}</td>
+                        <td>{{transacao.hora}}</td>
+                        <td>{{transacao.valor}}</td>
+                        <td>{{transacao.tipo}} </td>
+                        <td>{{transacao.cpf}}</td>
+                        <td>{{transacao.cartao}}</td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        </table>
+        <br>
+        
+    {% endfor %}   
+</div>

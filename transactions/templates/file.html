@@ -1,0 +1,7 @@
+<div style="margin: 0px auto; align-content: center; justify-content: center; ">
+    <form action="/transactions/" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit" value="Enviar">
+    </form>
+</div>
